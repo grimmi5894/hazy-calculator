@@ -8,8 +8,17 @@ const isValid = (item) => {
   return isNumeric(item) || operators.includes(item)
 }
 
-const calculate = () => {
 
+
+const calculate = (incoming) => {
+  let calculationSteps = []
+
+  for (let i = 0; i < incoming.length; i++) {
+    if (isValid(incoming[i])) {
+      calculationSteps.push(incoming[i])
+    }
+  }
+  console.log(calculationSteps)
 }
 
 module.exports = calculate
